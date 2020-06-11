@@ -10,6 +10,11 @@ class ManualEyeTracker(DisplayWithTrackBars):
             image_kwargs = {}
         video = Video(video_path)
         if rois is None:
+            print("Select ROIs:")
+            print("1. Select left eye, then press enter")
+            print("2. Select right eye, then press enter")
+            print("3. Select swim bladder, then press enter")
+            print("4. Press ESC")
             rois = cv2.selectROIs("Select ROIs", video[0], showCrosshair=False)
             cv2.destroyAllWindows()
 

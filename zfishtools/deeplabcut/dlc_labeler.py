@@ -49,6 +49,11 @@ class DLCLabeler(ManualEyeTracker):
         self.draw_mode = False
         self.tail_frame = self.current_raw_frame.copy()
         cv2.setMouseCallback(self.window, self.draw)
+        print("Label tail:")
+        print("1. Draw tail on a selected frame")
+        print("2. Press enter to save labels")
+        print()
+        print("Press ESC when finish labeling all the frames needed")
 
         while True:
             if cv2.getWindowProperty(self.window, cv2.WND_PROP_VISIBLE) < 1:
@@ -92,8 +97,9 @@ class DLCLabeler(ManualEyeTracker):
     def capture(self, *args):
         try:
             tail_points = self.image_kwargs['tail_points']
+            print(f"Frame {self.frame_number} captured.")
         except KeyError:
-            print("Select tail points")
+            print("Error: please draw tail before capturing frame")
             return
 
         eye_points = self.image_kwargs['eye_points']
@@ -120,3 +126,5 @@ class DLCLabeler(ManualEyeTracker):
 
         with open(self.config_path, 'w') as file:
             yaml.dump(self.config, file)
+
+        print(f"Labels of {self.video_name} is saved to {self.dir}")
