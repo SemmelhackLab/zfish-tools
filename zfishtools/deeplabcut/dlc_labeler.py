@@ -19,12 +19,14 @@ class DLCLabeler(ManualEyeTracker):
     def __init__(self, video_path=None, config_path=None, rois=None):
         if video_path is None:
             root = Tk()
+            root.lift()
             root.withdraw()
             video_path = filedialog.askopenfilename(title="Select video", filetypes=[("avi", "*.avi")])
             root.destroy()
 
         if config_path is None:
             root = Tk()
+            root.lift()
             root.withdraw()
             config_path = filedialog.askopenfilename(title="Select DeepLabCut config", filetypes=[("yaml", "*.yaml")])
             root.destroy()
