@@ -9,5 +9,5 @@ setup(
     author='Ka Chung Lam',
     author_email='kclamar@connect.ust.hk',
     description='Miscellaneous tools for larval zebrafish video analysis',
-    requires=['PyYAML', 'pandas', 'numpy', 'scikit-image', 'opencv-python']
+    install_requires=['PyYAML', 'pandas', 'numpy', 'scikit-image', 'opencv-python']
 )
