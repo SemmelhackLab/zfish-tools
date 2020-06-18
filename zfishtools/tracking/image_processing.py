@@ -1,6 +1,4 @@
-import cv2
-
-from .analysis import get_body_part_contours, get_tail_points
+from .analysis import get_body_part_contours
 from zfishtools.utils import draw_line, draw_contour, draw_point
 
 

@@ -1,11 +1,12 @@
-import cv2
-import pandas as pd
-import yaml
-import os
-import numpy as np
 from pathlib import Path
 from tkinter import filedialog
 from tkinter import Tk
+import os
+
+import cv2
+import numpy as np
+import pandas as pd
+import yaml
 
 from zfishtools import ManualEyeTracker, get_tail_points
 

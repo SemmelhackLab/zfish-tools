@@ -16,8 +16,6 @@ class Video:
     @staticmethod
     def load_frames(video_path):
         cap = cv2.VideoCapture(video_path)
-        # frames = [cv2.cvtColor(cap.read()[1], cv2.COLOR_BGR2GRAY)
-        #           for _ in range(int(cap.get(cv2.CAP_PROP_FRAME_COUNT)))]
         frames = [cap.read()[1] for _ in range(int(cap.get(cv2.CAP_PROP_FRAME_COUNT)))]
         cap.release()
         return frames
